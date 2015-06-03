@@ -21,5 +21,5 @@
             "Lrgt\\LaravelFormAjaxValidation": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
