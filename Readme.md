@@ -1,7 +1,11 @@
 # laravel-form-ajax-validation
 Make ajax validation with Laravel Requests for forms with bootstrap
 
-## 1. Configuration
+See the [full documentation.](https://github.com/guicho0601/laravel-form-ajax-validation/wiki)
+
+##Installation
+
+### 1. Composer
 
 Add to the composer of your project
 
@@ -13,12 +17,11 @@ Or edit your composer.json
 
 ```json
 "require": {
-    ...
     "lrgt/laravel-form-ajax-validation": "dev-master"
 },
 ```
 
-## 2. Add the ServiceProvider
+### 2. Add the ServiceProvider
 
 Open the file config/app.php
 
@@ -30,7 +33,7 @@ Open the file config/app.php
 },
 ```
 
-## 3. Publish vendor resources
+### 3. Publish vendor resources
 
 You need to publish the necessary views for create the scripts of jQuery
 
@@ -38,7 +41,7 @@ You need to publish the necessary views for create the scripts of jQuery
 $ php artisan vendor:publish
 ```
 
-## 4. Laravel Request
+### 4. Laravel Request
 
 Create a request
 
@@ -59,7 +62,7 @@ public function rules()
 }
 ```
 
-## 5. Add to the view
+### 5. Add to the view
 
 Create your form
 
@@ -93,14 +96,16 @@ Add the jQuery and include the view that have the ajax script
 You need jQuery 1.11.2 or higher
 
 > Where #myform is the id of your form and request is the namespace of your Request.
->**Note: ** Put the namespace of the request separate with `/`
+>__Note:__ Put the namespace of the request separate with `/`
+
+![Preview validation](http://i1277.photobucket.com/albums/y485/guicho0601/Captura%20de%20pantalla%202015-06-02%20a%20las%2022.15.51_zpsvm5wevpp.png)
 
 ***
 
 ### Author
 
-- **Name: ** Luis Ramos
-- **Email: ** guicholarg@gmail.com
+- __Name:__ Luis Ramos
+- __Email:__ guicholarg@gmail.com
 
 ### License
 
