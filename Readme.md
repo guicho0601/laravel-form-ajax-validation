@@ -13,7 +13,7 @@ O la
 Add to the composer of your project
 
 ```console
-composer require 'lrgt/laravel-form-ajax-validation:dev-master'
+composer require lrgt/laravel-form-ajax-validation
 ```
 
 Or edit your composer.json
