@@ -3,6 +3,9 @@ Make ajax validation with Laravel Requests for forms with bootstrap
 
 See the [full documentation.](https://github.com/guicho0601/laravel-form-ajax-validation/wiki)
 
+O la
+[Documentación en español](https://github.com/guicho0601/laravel-form-ajax-validation/wiki/Inicio)
+
 ##Installation
 
 ### 1. Composer
