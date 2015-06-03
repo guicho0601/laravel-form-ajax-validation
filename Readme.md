@@ -14,11 +14,23 @@ Or edit your composer.json
 ```json
 "require": {
     ...
-    "lrgt/laravel-form-ajax-validation": "dev-master",
+    "lrgt/laravel-form-ajax-validation": "dev-master"
+},
+```
+
+## 2. Add the ServiceProvider
+
+Open the file config/app.php
+
+```php
+"providers": {
+    ...
+    'Lrgt\LaravelFormAjaxValidation\LaravelFormAjaxValidationServiceProvider',
     ...
 },
 ```
-## 2. Publish vendor resources
+
+## 3. Publish vendor resources
 
 You need to publish the necessary views for create the scripts of jQuery
 
@@ -26,7 +38,7 @@ You need to publish the necessary views for create the scripts of jQuery
 $ php artisan vendor:publish
 ```
 
-## 3. Laravel Request
+## 4. Laravel Request
 
 Create a request
 
@@ -47,7 +59,7 @@ public function rules()
 }
 ```
 
-## 4. Add to the view
+## 5. Add to the view
 
 Create your form
 
