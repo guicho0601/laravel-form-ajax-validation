@@ -3,11 +3,15 @@
         if(!isset($form)){
             $form = 'form';
         }
+        if(!isset($on_start)){
+            $on_start = false;
+        }
     ?>
     var validated = false;
     var buton_submit = false;
     var my_form = $('<?=$form?>');
     var name_class = '<?=$request?>';
+    var on_start = '<?=$on_start?>';
 
     initialize();
 
@@ -30,7 +34,9 @@
                 validate();
             });
         });
-        validate();
+        if(on_start=='1'){
+            validate();
+        }
         $(':input:enabled:visible:first').focus();
     }
 

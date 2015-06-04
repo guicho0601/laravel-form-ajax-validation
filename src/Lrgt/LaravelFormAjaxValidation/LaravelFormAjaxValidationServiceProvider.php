@@ -26,7 +26,8 @@ class LaravelFormAjaxValidationServiceProvider extends ServiceProvider {
             $class = $request->class;
             $class = str_replace('/','\\',$class);
             $my_request = new $class();
-            $validator = Validator::make($request->all(),$my_request->rules());
+            $validator = Validator::make($request->all(),$my_request->rules(),$my_request->messages());
+            $validator->setAttributeNames($my_request->attributes());
             if($request->ajax()){
                 if ($validator->fails())
                 {
@@ -43,7 +44,7 @@ class LaravelFormAjaxValidationServiceProvider extends ServiceProvider {
             }
         });
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/vendor/ajax-validation'),
+            __DIR__.'/views' => base_path('resources/views/vendor/lrgt'),
         ]);
 	}
 
