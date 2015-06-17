@@ -9,7 +9,7 @@
     ?>
     var validated = false;
     var buton_submit = false;
-    var my_form = $('<?=$form?>');
+    var my_form = $('#<?=$form?>');
     var name_class = '<?=$request?>';
     var on_start = '<?=$on_start?>';
 
@@ -17,18 +17,23 @@
 
     function initialize(){
         my_form.on('submit',function(){
-            var button = my_form.find('input[type=submit]');
-            button.attr("disabled", "disabled");
             if(validated == true){
+                var $form = $(this);
+                if ($form.data('submitted') === true) {
+                    e.preventDefault();
+                } else {
+                    $form.data('submitted', true);
+                }
                 return true;
             }else{
-                button.removeAttr("disabled");
                 return validate();
             }
         });
 
-        $("input[type=submit]").on('click',function(){
+        $("input[type=submit]").on('click',function(e){
+            e.preventDefault();
             buton_submit = true;
+            validate();
         });
 
         my_form.children('.form-group').append('<div class="help-block with-errors"></div>');
@@ -47,6 +52,12 @@
     function validate(){
         var data = my_form.serializeArray();
         data.push({name:'class',value:name_class});
+        for(var i=0; i<data.length; i++){
+            item = data[i];
+            if(item.name == '_method'){
+                data.splice(i,1);
+            }
+        }
         $.ajax({
             url: '<?=url('validation')?>',
             type: 'post',
