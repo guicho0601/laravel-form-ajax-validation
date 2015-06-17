@@ -17,9 +17,12 @@
 
     function initialize(){
         my_form.on('submit',function(){
+            var button = my_form.find('input[type=submit]');
+            button.attr("disabled", "disabled");
             if(validated == true){
                 return true;
             }else{
+                button.removeAttr("disabled");
                 return validate();
             }
         });
@@ -66,6 +69,7 @@
                     $.each(data.errors,function(key, data){
                         var campo = $('#'+key);
                         var father = campo.parent('.form-group');
+                        father.removeClass('has-success');
                         father.addClass('has-error');
                         father.children('.help-block').html(data[0]);
                         campos_error.push(key);
