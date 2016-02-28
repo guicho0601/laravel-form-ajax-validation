@@ -34,7 +34,7 @@
             }
         });
 
-        $("input[type=submit]").on('click',function(e){
+        my_form.find("input[type=submit]").on('click',function(e){
             e.preventDefault();
             buton_submit = true;
             validate();
