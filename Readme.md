@@ -109,7 +109,7 @@ Create your form
 </form>
 ```
 
-Add the jQuery and include the view that have the ajax script
+Ensure you include jQuery, the jQuery Laravel Ajax Validation plugin, and instantiate the plugin on the form.
 
 ```javascript
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
