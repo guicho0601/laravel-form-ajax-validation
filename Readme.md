@@ -117,7 +117,7 @@ Ensure you include jQuery, the jQuery Laravel Ajax Validation plugin, and instan
 <script>
     jQuery(function($){
         $('#myform').laravelAjaxValidate({
-            validation_request_class: 'App\\Http\\Requests\\TestRequest',
+            validation_request_class: 'App/Http/Requests/TestRequest',
             validation_url: '{{ url('validation') }}',
             on_start: true
         });
@@ -131,7 +131,7 @@ You need jQuery 1.11.2 or higher
 >
 > `on_start` is just if you want that the validation work from the load of the page.
 >
->__Note:__ Put the namespace of the request separate with `\\`
+>__Note:__ Separate the namespace of the request class with `/`
 
 ![Preview validation](http://i1277.photobucket.com/albums/y485/guicho0601/Captura%20de%20pantalla%202015-06-02%20a%20las%2022.15.51_zpsvm5wevpp.png)
 
