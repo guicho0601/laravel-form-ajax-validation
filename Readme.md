@@ -113,7 +113,7 @@ Add the jQuery and include the view that have the ajax script
 
 ```javascript
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="{{ asset('js/jquery.laravel-ajax-validation.js') }}"></script>
+<script src="{{ asset('public/vendor/lrgt/jquery.laravel-ajax-validation.js') }}"></script>
 <script>
     jQuery(function($){
         $('#myform').laravelAjaxValidate({
