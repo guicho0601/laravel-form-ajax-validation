@@ -21,7 +21,8 @@ class LaravelFormAjaxValidationServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        include __DIR__.'/../../../../../../app/Http/routes.php';
+        include base_path('app/Http/routes.php');
+
         Route::post('validation',function(Request $request){
             $class = $request->class;
             $class = str_replace('/','\\',$class);
@@ -43,8 +44,9 @@ class LaravelFormAjaxValidationServiceProvider extends ServiceProvider {
                 }
             }
         });
+
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/vendor/lrgt'),
+            __DIR__.'/assets' => public_path('vendor/lrgt'),
         ]);
 	}
 
