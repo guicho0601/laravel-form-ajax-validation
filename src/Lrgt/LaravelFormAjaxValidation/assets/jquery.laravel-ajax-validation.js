@@ -68,7 +68,9 @@
 
     Plugin.prototype.validate = function () {
         var data = $(this.element).serializeArray();
-        data.push({name: 'class', value: this.options.validation_request_class});
+        data.push({ name: 'class', value: this.options.validation_request_class });
+        data.push({ name: 'action', value: $(this.element).attr('action') });
+        data.push({ name: 'method', value: $('input[name=_method]', this.element).length ? $('input[name=_method]', this.element).val() : $(this.element).attr('method') || 'get' });
 
         for (var i = 0; i < data.length; i++) {
             var item = data[i];
