@@ -22,8 +22,6 @@ class LaravelFormAjaxValidationServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        include base_path('app/Http/routes.php');
-
         Route::post('validation',function(Request $request){
             // create a new request
             $formActionRequest = Request::create($request->input('action'), $request->input('method'));
