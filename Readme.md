@@ -31,7 +31,7 @@ Open the file config/app.php
 ```php
 "providers": {
     ...
-    'Lrgt\LaravelFormAjaxValidation\LaravelFormAjaxValidationServiceProvider',
+    Lrgt\LaravelFormAjaxValidation\LaravelFormAjaxValidationServiceProvider::class,
     ...
 },
 ```
@@ -109,19 +109,29 @@ Create your form
 </form>
 ```
 
-Add the jQuery and include the view that have the ajax script
+Ensure you include jQuery, the jQuery Laravel Ajax Validation plugin, and instantiate the plugin on the form.
 
 ```javascript
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-@include('vendor.lrgt.ajax_script', ['form' => '#myform',
-'request'=>'App/Http/Requests/TestRequest','on_start'=>true])
+<script src="{{ asset('public/vendor/lrgt/jquery.laravel-ajax-validation.js') }}"></script>
+<script>
+    jQuery(function($){
+        $('#myform').laravelAjaxValidate({
+            validation_request_class: 'App/Http/Requests/TestRequest',
+            validation_url: '{{ url('validation') }}',
+            on_start: true
+        });
+    });
+</script>
 ```
 
 You need jQuery 1.11.2 or higher
 
-> Where #myform is the id of your form and request is the namespace of your Request.
-> Onstart is just if you want that the validation work from the load of the page.
->__Note:__ Put the namespace of the request separate with `/`
+> Where `#myform` is the id of your form, `validation_request_class` is the namespace of your Request, and `validation_url` is set as above.
+>
+> `on_start` is just if you want that the validation work from the load of the page.
+>
+>__Note:__ Separate the namespace of the request class with `/`
 
 ![Preview validation](http://i1277.photobucket.com/albums/y485/guicho0601/Captura%20de%20pantalla%202015-06-02%20a%20las%2022.15.51_zpsvm5wevpp.png)
 
