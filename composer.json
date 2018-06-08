@@ -21,5 +21,12 @@
             "Lrgt\\LaravelFormAjaxValidation": "src/"
         }
     },
+    "extra": {
+    "laravel": {
+      "providers": [
+        "Lrgt\\LaravelFormAjaxValidation\\LaravelFormAjaxValidationServiceProvider"
+      ]
+    }
+  },
     "minimum-stability": "dev"
 }
